@@ -1,7 +1,7 @@
-# $Id: Makefile.PL 125 2005-10-24 04:55:20Z andy $
+use 5.008;
 use ExtUtils::MakeMaker;
 
-WriteMakefile (
+my %params = (
     'NAME'           => 'Test::Pod',
     'VERSION_FROM'   => 'Pod.pm',
     'PREREQ_PM'      => {
@@ -13,3 +13,13 @@ WriteMakefile (
     clean => { FILES => 'Test-Pod-*' },
 );
 
+if ( $ExtUtils::MakeMaker::VERSION ge '6.46' ) {
+    $parms{META_MERGE} = {
+        resources => {
+            license     => 'http://dev.perl.org/licenses/',
+            repository  => 'http://github.com/petdance/test-pod',
+        }
+    }
+}
+
+WriteMakefile ( %params );
