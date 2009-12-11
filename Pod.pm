@@ -65,6 +65,7 @@ use 5.008;
 
 use Test::Builder;
 use File::Spec;
+use Pod::Simple;
 
 our %ignore_dirs = (
     '.bzr' => 'Bazaar',
@@ -126,7 +127,7 @@ sub pod_file_ok {
         return;
     }
 
-    my $checker = Test::Pod::_parser->new;
+    my $checker = Pod::Simple->new;
 
     $checker->output_string( \my $trash ); # Ignore any output
     $checker->parse_file( $file );
@@ -290,44 +291,3 @@ as the Artistic License v2.0 or GNU Public License v2.0.
 =cut
 
 1;
-
-package Test::Pod::_parser;
-use base 'Pod::Simple';
-use strict;
-
-sub _handle_element_start {
-    my($parser, $element_name, $attr_hash_r) = @_;
-
-    # Curiously, Pod::Simple supports L<text|scheme:...> rather well.
-
-    if( $element_name eq "L" and $attr_hash_r->{type} eq "url") {
-        $parser->{_state_of_concern}{'Lurl'} = $attr_hash_r->{to};
-    }
-
-    return $parser->SUPER::_handle_element_start(@_);
-}
-
-sub _handle_element_end {
-    my($parser, $element_name) = @_;
-
-    delete $parser->{_state_of_concern}{'Lurl'}
-        if $element_name eq "L" and exists $parser->{_state_of_concern}{'Lurl'};
-
-    return $parser->SUPER::_handle_element_end(@_);
-}
-
-sub _handle_text {
-    my($parser, $text) = @_;
-    if( my $href = $parser->{_state_of_concern}{'Lurl'} ) {
-        if( $href ne $text ) {
-            my $line = $parser->line_count() -2; # XXX: -2, WHY WHY WHY??
-
-            $parser->whine($line, "L<text|scheme:...> is invalid according to perlpod");
-        }
-    }
-
-    return $parser->SUPER::_handle_text(@_);
-}
-
-1;
-

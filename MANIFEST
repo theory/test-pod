@@ -11,8 +11,6 @@ t/empty-file.pod
 t/good.t
 t/item-ordering.pod
 t/item-ordering.t
-t/link.pod
-t/link.t
 t/load.t
 t/missing-file.t
 t/pod.t
