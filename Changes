@@ -1,5 +1,10 @@
 Change log for Test::Pod
 
+1.41
+    Test::Pod no longer complains about the construct L<text|url>, as it
+    is no longer illegal (as of Pod::Simple 3.11 and Perl 5.11.3).
+    Thanks to David Wheeler.
+
 1.40 - Sun Jul 12 23:32:11 CDT 2009
     [THINGS THAT MAY BREAK YOUR CODE]
     Test::Pod now requires Perl 5.8.0.
