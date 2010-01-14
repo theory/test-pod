@@ -1,6 +1,6 @@
 Change log for Test::Pod
 
-1.41
+1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.
     * Test::Pod no longer complains about the construct L<text|url>, as it is
       no longer illegal (as of Perl 5.11.3).
