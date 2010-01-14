@@ -1,14 +1,30 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Test-Pod
-version:      1.26
-version_from: Pod.pm
-installdirs:  site
+---
+abstract: 'check for POD errors in files'
+author:
+  - 'Currently maintained by David E. Wheeler, C<< <david@justatheory.com> >>.'
+build_requires:
+  Module::Build: 0.30
+  Test::More: 0.70
+configure_requires:
+  Module::Build: 0.30
+generated_by: 'Module::Build version 0.3601'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Test-Pod
+provides:
+  Test::Pod:
+    file: lib/Test/Pod.pm
+    version: 1.41
 requires:
-    File::Spec:                    0
-    Pod::Simple:                   2.04
-    Test::Builder::Tester:         1.02
-    Test::More:                    0.62
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+  File::Spec: 0
+  Pod::Simple: 3.07
+  Test::Builder::Tester: 1.02
+  Test::More: 0.70
+resources:
+  bugtracker: http://github.com/theory/test-xpod/issues/
+  homepage: http://search.cpan.org/dist/Test-Pod/
+  license: http://dev.perl.org/licenses/
+  repository: http://github.com/theory/test-pod/tree/
+version: 1.41
