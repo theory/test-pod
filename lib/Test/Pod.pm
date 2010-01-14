@@ -268,13 +268,16 @@ Note that you no longer can test for "no pod".
 
 =head1 AUTHOR
 
-Currently maintained by Andy Lester, C<< <andy at petdance.com> >>.
+Currently maintained by David E. Wheeler, C<< <david@justatheory.com> >>.
 
 Originally by brian d foy.
+
+Maintainer emeritus: Andy Lester, C<< <andy at petdance.com> >>.
 
 =head1 ACKNOWLEDGEMENTS
 
 Thanks to
+Andy Lester,
 David Wheeler,
 Paul Miller
 and
@@ -283,7 +286,7 @@ for contributions and to C<brian d foy> for the original code.
 
 =head1 COPYRIGHT
 
-Copyright 2006-2009, Andy Lester, All Rights Reserved.
+Copyright 2006-2010, Andy Lester. Some Rights Reserved.
 
 You may use, modify, and distribute this package under the terms
 as the Artistic License v2.0 or GNU Public License v2.0.
