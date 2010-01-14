@@ -1,5 +1,7 @@
 Change log for Test::Pod
 
+1.42
+
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.
     * Test::Pod no longer complains about the construct L<text|url>, as it is
