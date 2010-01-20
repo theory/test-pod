@@ -1,6 +1,7 @@
 Change log for Test::Pod
 
 1.42
+    * Fixed invalid Pod link. Thanks to Markus Sonderegger.
 
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.
