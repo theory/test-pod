@@ -284,12 +284,12 @@ and
 Peter Edwards
 for contributions and to C<brian d foy> for the original code.
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
 Copyright 2006-2010, Andy Lester. Some Rights Reserved.
 
-You may use, modify, and distribute this package under the terms
-as the Artistic License v2.0 or GNU Public License v2.0.
+This module is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
 
