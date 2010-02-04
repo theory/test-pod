@@ -19,7 +19,7 @@ Module::Build->new(
     meta_merge => {
         resources => {
             homepage   => 'http://search.cpan.org/dist/Test-Pod/',
-            bugtracker => 'http://github.com/theory/test-xpod/issues/',
+            bugtracker => 'http://github.com/theory/test-pod/issues/',
             repository => 'http://github.com/theory/test-pod/tree/',
         }
     },
