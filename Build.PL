@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Module::Build;
+use Module::Build '0.30';
 
 Module::Build->new(
     module_name        => 'Test::Pod',

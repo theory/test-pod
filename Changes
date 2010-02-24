@@ -4,6 +4,10 @@ Change log for Test::Pod
     * Fixed invalid Pod link. Thanks to Markus Sonderegger.
     * Changed license in the POD to "Same as Perl" to match the license listed in
       `META.yml`.
+    * Changed `Build.PL` to require Module::Build 0.30. It already does in
+      `configure_requires`, but also doing so on the `use` line helps provide
+      a more useful error message in older toolchain tools that don't use
+      `configure_requires`.
 
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.
