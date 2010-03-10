@@ -3,6 +3,7 @@ Changes
 lib/Test/Pod.pm
 MANIFEST			This list of files
 META.yml
+README
 t/00-load.t
 t/all_pod_files.t
 t/cut-outside-block.pod

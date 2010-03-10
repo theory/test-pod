@@ -1,7 +1,7 @@
 _build
 blib
 Test-Pod-*
-MANIFEST*
+MANIFEST.bak
 META.*
 MYMETA.*
 Build

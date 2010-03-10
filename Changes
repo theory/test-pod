@@ -8,6 +8,8 @@ Change log for Test::Pod
       `configure_requires`, but also doing so on the `use` line helps provide
       a more useful error message in older toolchain tools that don't use
       `configure_requires`.
+    * Updated `MANIFEST` so that the `README` is actually included in the
+      distribution.
 
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.
