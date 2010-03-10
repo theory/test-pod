@@ -5,3 +5,5 @@ MANIFEST.bak
 META.*
 MYMETA.*
 Build
+*.rej
+*.orig

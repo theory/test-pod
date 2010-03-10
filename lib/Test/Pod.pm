@@ -253,7 +253,7 @@ sub _is_perl {
     my $first = <$fh>;
     close $fh;
 
-    return 1 if defined $first && ($first =~ /^#!.*perl/);
+    return 1 if defined $first && ($first =~ /(?:^#!.*perl)|--\*-Perl-\*--/);
 
     return;
 }

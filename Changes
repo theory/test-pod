@@ -10,6 +10,9 @@ Change log for Test::Pod
       `configure_requires`.
     * Updated `MANIFEST` so that the `README` is actually included in the
       distribution.
+    * Now recognizes `.bat` files as Perl files when they contain
+      "--*-Perl-*--" on the first line. Thanks to Olivier 'dolmen' Mengué for
+      the patch (RT #46973).
 
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.

@@ -13,6 +13,7 @@ if ( $^O eq "VMS" ) {
     @expected = (
         File::Spec->catfile( 'blib', 'lib', 'Test', 'Pod.pm' ),
         File::Spec->catfile( 't', 'pod', 'good-pod-script.' ),
+        File::Spec->catfile( 't', 'pod', 'good-pod-script.bat' ),
         File::Spec->catfile( 't', 'pod', 'good.pod' ),
         File::Spec->catfile( 't', 'pod', 'no_pod.pod' ),
     );
@@ -23,6 +24,7 @@ else {
     @expected = qw(
         blib/lib/Test/Pod.pm
         t/pod/good-pod-script
+        t/pod/good-pod-script.bat
         t/pod/good.pod
         t/pod/no_pod.pod
     );
