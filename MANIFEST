@@ -16,6 +16,7 @@ t/load.t
 t/missing-file.t
 t/pod.t
 t/pod/good-pod-script
+t/pod/good-pod-script.bat
 t/pod/good.pod
 t/pod/no_pod.pod
 t/selftest.t

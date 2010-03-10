@@ -1,6 +1,6 @@
 Change log for Test::Pod
 
-1.42
+1.42 - 2010-03-10T19:41:20
     * Fixed invalid Pod link. Thanks to Markus Sonderegger.
     * Changed license in the POD to "Same as Perl" to match the license listed in
       `META.yml`.

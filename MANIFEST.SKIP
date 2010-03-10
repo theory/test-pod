@@ -23,6 +23,8 @@
 \.tmp$
 \.old$
 \.bak$
+\.orig$
+\.rej$
 \#$
 \b\.#
 

@@ -16,15 +16,15 @@ name: Test-Pod
 provides:
   Test::Pod:
     file: lib/Test/Pod.pm
-    version: 1.41
+    version: 1.42
 requires:
   File::Spec: 0
   Pod::Simple: 3.07
   Test::Builder::Tester: 1.02
   Test::More: 0.70
 resources:
-  bugtracker: http://github.com/theory/test-xpod/issues/
+  bugtracker: http://github.com/theory/test-pod/issues/
   homepage: http://search.cpan.org/dist/Test-Pod/
   license: http://dev.perl.org/licenses/
   repository: http://github.com/theory/test-pod/tree/
-version: 1.41
+version: 1.42
