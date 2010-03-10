@@ -135,6 +135,7 @@ sub pod_file_ok {
     my $ok = !$checker->any_errata_seen;
        $ok = _additional_test_pod_specific_checks( $ok, ($checker->{errata}||={}), $file );
 
+    $name .= ' (no pod)' if !$checker->content_seen;
     $Test->ok( $ok, $name );
     if ( !$ok ) {
         my $lines = $checker->{errata};
@@ -178,7 +179,7 @@ sub all_pod_files_ok {
 
     my $ok = 1;
     foreach my $file ( @files ) {
-        pod_file_ok( $file, $file ) or undef $ok;
+        pod_file_ok( $file ) or undef $ok;
     }
     return $ok;
 }
@@ -194,9 +195,11 @@ A Perl file is:
 
 =over 4
 
-=item * Any file that ends in F<.PL>, F<.pl>, F<.pm>, F<.pod> or F<.t>.
+=item * Any file that ends in F<.PL>, F<.pl>, F<.PL>, F<.pm>, F<.pod>, or F<.t>.
 
 =item * Any file that has a first line with a shebang and "perl" on it.
+
+=item * Any file that ends in F<.bat> and has a first line with "--*-Perl-*--" on it.
 
 =back
 

@@ -15,6 +15,13 @@ Change log for Test::Pod
       the patch (RT #46973).
     * `all_pod_files_ok()` now operates on directories as well as files.
       Thanks to Adriano Ferreira for the patch (RT #33025).
+    * Files with no POD now have " (no pod)" added to test name. Thanks to
+      Adriano Ferreira for the patch (RT #34955).
+    * Updated documentation to note that `.PL` files are considered Perl
+      files. Thanks to Adriano Ferreira for the spot (RT #34955).
+    * `all_pod_files_ok()` now lets `pod_file_ok()` set the default test name,
+      rather than doing so itself. Thanks to Adriano Ferreira for the spot (RT
+      #34955).
 
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.
