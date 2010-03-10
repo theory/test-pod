@@ -13,6 +13,8 @@ Change log for Test::Pod
     * Now recognizes `.bat` files as Perl files when they contain
       "--*-Perl-*--" on the first line. Thanks to Olivier 'dolmen' Mengué for
       the patch (RT #46973).
+    * `all_pod_files_ok()` now operates on directories as well as files.
+      Thanks to Adriano Ferreira for the patch (RT #33025).
 
 1.41 - 2010-01-14T20:09:25
     * Maintenance transfered to David Wheeler.

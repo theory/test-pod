@@ -147,17 +147,17 @@ sub pod_file_ok {
     return $ok;
 } # pod_file_ok
 
-=head2 all_pod_files_ok( [@files/@directories] )
+=head2 all_pod_files_ok( [@entries] )
 
-Checks all the files in C<@files> for valid POD.  It runs
-C<all_pod_files()> on each file/directory, and calls the C<plan()>
-function for you (one test for each function), so you can't have
-already called C<plan>.
+Checks all the files under C<@entries> for valid POD. It runs
+L<all_pod_files()> on directories and assumes everything else to be a file to
+be tested. It calls the C<plan()> function for you (one test for each file),
+so you can't have already called C<plan>.
 
-If C<@files> is empty or not passed, the function finds all POD
-files in the F<blib> directory if it exists, or the F<lib> directory
-if not.  A POD file is one that ends with F<.pod>, F<.pl> and F<.pm>,
-or any file where the first line looks like a shebang line.
+If C<@entries> is empty or not passed, the function finds all POD files in
+files in the F<blib> directory if it exists, or the F<lib> directory if not. A
+POD file is one that ends with F<.pod>, F<.pl> and F<.pm>, or any file where
+the first line looks like a shebang line.
 
 If you're testing a module, just make a F<t/pod.t>:
 
@@ -171,7 +171,8 @@ Returns true if all pod files are ok, or false if any fail.
 =cut
 
 sub all_pod_files_ok {
-    my @files = @_ ? @_ : all_pod_files();
+    my @args = @_ ? @_ : _starting_points();
+    my @files = map { -d $_ ? all_pod_files($_) : $_ } @args;
 
     $Test->plan( tests => scalar @files );
 
@@ -184,11 +185,10 @@ sub all_pod_files_ok {
 
 =head2 all_pod_files( [@dirs] )
 
-Returns a list of all the Perl files in I<$dir> and in directories
-below.  If no directories are passed, it defaults to F<blib> if
-F<blib> exists, or else F<lib> if not.  Skips any files in CVS,
-.svn, .git and similar directories.  See C<%Test::Pod::ignore_dirs>
-for a list of them.
+Returns a list of all the Perl files in I<@dirs> and in directories below. If
+no directories are passed, it defaults to F<blib> if F<blib> exists, or else
+F<lib> if not. Skips any files in CVS, .svn, .git and similar directories. See
+C<%Test::Pod::ignore_dirs> for a list of them.
 
 A Perl file is:
 
