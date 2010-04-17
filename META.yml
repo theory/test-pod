@@ -4,7 +4,9 @@ author:
   - 'Currently maintained by David E. Wheeler, C<< <david@justatheory.com> >>.'
 build_requires:
   Module::Build: 0.30
-  Test::More: 0.70
+  File::Spec: 0
+  Pod::Simple: 3.05
+  Test::More: 0.62
 configure_requires:
   Module::Build: 0.30
 generated_by: 'Module::Build version 0.3601'
@@ -19,9 +21,9 @@ provides:
     version: 1.42
 requires:
   File::Spec: 0
-  Pod::Simple: 3.07
+  Pod::Simple: 3.05
   Test::Builder::Tester: 1.02
-  Test::More: 0.70
+  Test::More: 0.62
 resources:
   bugtracker: http://github.com/theory/test-pod/issues/
   homepage: http://search.cpan.org/dist/Test-Pod/
