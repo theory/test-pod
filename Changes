@@ -1,11 +1,11 @@
 Change log for Test::Pod
 
-1.43
+1.43 2010-04-21T02:33:59
     * Reduced prereq for Test::More to 0.62, prereq for Pod::Simple to 3.05,
       and added File::Spec to the list of prereqs. The prerequisites were
-      needlessly high, and by reducing them Test::Pod intalls on Perl 5.8.8
-      without requiring any other downloads. Thanks to Chris Wittmer for the
-      patch.
+      needlessly high, and by reducing them Test::Pod can rely on the core
+      versions of those modules in on Perl 5.8.8. Thanks to Chris Wittmer for
+      the patch.
 
 1.42 - 2010-03-10T19:41:20
     * Fixed invalid Pod link. Thanks to Markus Sonderegger.
