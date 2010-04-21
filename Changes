@@ -1,5 +1,7 @@
 Change log for Test::Pod
 
+1.44
+
 1.43 2010-04-21T02:33:59
     * Reduced prereq for Test::More to 0.62, prereq for Pod::Simple to 3.05,
       and added File::Spec to the list of prereqs. The prerequisites were
