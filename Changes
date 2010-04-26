@@ -1,5 +1,7 @@
 Change log for Test::Pod
 
+1.45
+
 1.44 2010-04-26T17:33:02
     * Restored the `Makefile.PL` by using Module::Build::Compat's
       "traditional" configuration.
