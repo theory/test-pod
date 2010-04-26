@@ -6,6 +6,7 @@ Module::Build->new(
     module_name        => 'Test::Pod',
     license            => 'perl',
     configure_requires => { 'Module::Build' => '0.30', },
+    create_makefile_pl => 'traditional',
     build_requires     => {
         'Module::Build' => '0.30',
         'File::Spec'    => 0,
