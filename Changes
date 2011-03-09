@@ -1,5 +1,7 @@
 Change log for Test::Pod
 
+1.46
+
 1.45 2011-03-09T20:00:59
     * Removed Module::Build from `build_requires`, since it does nothing
       out-of-the ordinary, and this keeps it out of the `Makefile.PL`'s
