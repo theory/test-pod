@@ -8,7 +8,6 @@ Module::Build->new(
     configure_requires => { 'Module::Build' => '0.30', },
     create_makefile_pl => 'traditional',
     build_requires     => {
-        'Module::Build' => '0.30',
         'File::Spec'    => 0,
         'Pod::Simple'   => '3.05',
         'Test::More'    => '0.62',
