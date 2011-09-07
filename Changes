@@ -1,6 +1,8 @@
 Change log for Test::Pod
 
 1.46
+    * Fixed a crash when `all_pod_files_ok()` finds no files to test. Thanks
+      to H.Merijn Brand.
 
 1.45 2011-03-09T20:00:59
     * Removed Module::Build from `build_requires`, since it does nothing

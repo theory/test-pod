@@ -175,6 +175,11 @@ sub all_pod_files_ok {
     my @args = @_ ? @_ : _starting_points();
     my @files = map { -d $_ ? all_pod_files($_) : $_ } @args;
 
+    unless (@files) {
+        $Test->skip_all( "No files found in (@args)\n" );
+        return 1;
+    }
+
     $Test->plan( tests => scalar @files );
 
     my $ok = 1;
