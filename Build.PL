@@ -13,7 +13,7 @@ Module::Build->new(
         'Test::More'    => '0.62',
     },
     requires => {
-        'File::Spec'            => 0,
+        'File::Find'            => 0,
         'Pod::Simple'           => '3.05',
         'Test::Builder::Tester' => '1.02',
         'Test::More'            => '0.62',
