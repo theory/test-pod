@@ -5,6 +5,7 @@ Change log for Test::Pod
       to H.Merijn Brand.
     * Switched from custom file searching code to File::Find. Suggested by
       H.Merijn Brand.
+    * Fixed failing test on Pod::Simple 3.24.
 
 1.45 2011-03-09T20:00:59
     * Removed Module::Build from `build_requires`, since it does nothing

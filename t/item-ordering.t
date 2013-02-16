@@ -14,6 +14,10 @@ test_out( "not ok 1 - POD test for $file" );
 pod_file_ok( $file );
 test_fail(-1);
 test_diag(
+    ( Pod::Simple->VERSION >= 3.24 ? (
+        "$file (17): Expected text matching /\\s+[^\\*\\d]/ after '=item'",
+        "$file (21): Expected text matching /\\s+[^\\*\\d]/ after '=item'",
+    ) : ()),
     "$file (32): You can't have =items (as at line 36) unless the first thing after the =over is an =item",
 );
 test_test( "$file is bad" );
