@@ -1,6 +1,6 @@
 Change log for Test::Pod
 
-1.46
+1.46 - 2013-02-16T19:46:17Z
     * Fixed a crash when `all_pod_files_ok()` finds no files to test. Thanks
       to H.Merijn Brand.
     * Switched from custom file searching code to File::Find. Suggested by
