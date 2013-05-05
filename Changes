@@ -1,6 +1,7 @@
 Change log for Test::Pod
 
 1.47
+    * Fixed failing test on Pod::Simple 3.27 and higher.
 
 1.46 - 2013-02-16T19:46:17Z
     * Fixed a crash when `all_pod_files_ok()` finds no files to test. Thanks
