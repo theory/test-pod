@@ -1,5 +1,7 @@
 Change log for Test::Pod
 
+1.48
+
 1.47 - 2013-05-05T03:14:25Z
     * Fixed failing test on Pod::Simple 3.27 and higher.
 
