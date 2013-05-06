@@ -1,11 +1,13 @@
 Change log for Test::Pod
 
-1.48
+1.48 - 2013-05-06T04:47:00Z
+    * Fixed test failure with versions of Pod::Simple lower than 3.24. Thanks
+      to Martin Holste and Tatsuhiko Miyagawa for the reports.
 
 1.47 - 2013-05-05T03:14:25Z
     * Fixed failing test on Pod::Simple 3.27 and higher.
 
-1.46 -2013-02-16T19:46:17Z
+1.46 - 2013-02-16T19:46:17Z
     * Fixed a crash when `all_pod_files_ok()` finds no files to test. Thanks
       to H.Merijn Brand.
     * Switched from custom file searching code to File::Find. Suggested by
