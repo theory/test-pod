@@ -27,6 +27,8 @@ test_diag(
         "$file (17): Expected text after =item, not a number",
         "$file (21): Expected text after =item, not a number",
         "$file (32): You can't have =items (as at line 36) unless the first thing after the =over is an =item",
-    ) : ()),
+    ) : (
+        "$file (32): You can't have =items (as at line 36) unless the first thing after the =over is an =item",
+    ))
 );
 test_test( "$file is bad" );
