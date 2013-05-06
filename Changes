@@ -1,5 +1,7 @@
 Change log for Test::Pod
 
+1.49
+
 1.48 - 2013-05-06T04:47:00Z
     * Fixed test failure with versions of Pod::Simple lower than 3.24. Thanks
       to Martin Holste and Tatsuhiko Miyagawa for the reports.
