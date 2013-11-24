@@ -22,7 +22,7 @@ Module::Build->new(
         resources => {
             homepage   => 'http://search.cpan.org/dist/Test-Pod/',
             bugtracker => 'http://github.com/theory/test-pod/issues/',
-            repository => 'http://github.com/theory/test-pod/tree/',
+            repository => 'http://github.com/theory/test-pod',
         }
     },
 )->create_build_script;
