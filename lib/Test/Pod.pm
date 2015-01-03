@@ -1,6 +1,7 @@
 package Test::Pod;
 
 use strict;
+use warnings;
 
 =head1 NAME
 
@@ -92,6 +93,7 @@ sub import {
 
     $Test->exported_to($caller);
     $Test->plan(@_);
+    return;
 }
 
 sub _additional_test_pod_specific_checks {
