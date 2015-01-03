@@ -218,7 +218,7 @@ sub all_pod_files {
     my @pod;
     require File::Find;
     File::Find::find({
-        wanted   => sub { -f $_ && _is_perl ($_) and push @pod, $File::Find::name },
+        wanted   => sub { -f $_ && _is_perl($_) && push @pod, $File::Find::name },
         no_chdir => 1,
     }, @_ ? @_ : _starting_points());
     return @pod;
