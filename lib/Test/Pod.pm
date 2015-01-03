@@ -86,7 +86,7 @@ sub import {
     my $self = shift;
     my $caller = caller;
 
-    for my $func ( qw( pod_file_ok all_pod_files all_pod_files_ok ) ) {
+    for my $func ( qw( pod_file_ok all_pod_files all_pod_files_ok  ) ) {
         no strict 'refs';
         *{$caller."::".$func} = \&$func;
     }
@@ -232,9 +232,7 @@ sub _starting_points {
 sub _is_perl {
     my $file = shift;
 
-    return 1 if $file =~ /\.PL$/;
-    return 1 if $file =~ /\.p(?:l|m|od)$/;
-    return 1 if $file =~ /\.t$/;
+    return 1 if $file =~ / \.PL$ | \.p(?:l|m|od)$ | \.t$ /x;
 
     open my $fh, '<', $file or return;
     my $first = <$fh>;
