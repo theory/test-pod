@@ -2,6 +2,8 @@ package Test::Pod;
 
 use strict;
 use warnings;
+use Exporter 'import';
+our @EXPORT = qw( pod_file_ok all_pod_files all_pod_files_ok  );
 
 =head1 NAME
 
@@ -82,19 +84,6 @@ our %ignore_dirs = (
 
 my $Test = Test::Builder->new;
 
-sub import {
-    my $self = shift;
-    my $caller = caller;
-
-    for my $func ( qw( pod_file_ok all_pod_files all_pod_files_ok  ) ) {
-        no strict 'refs';
-        *{$caller."::".$func} = \&$func;
-    }
-
-    $Test->exported_to($caller);
-    $Test->plan(@_);
-    return;
-}
 
 sub _additional_test_pod_specific_checks {
     my ($ok, $errata, $file) = @_;
