@@ -221,16 +221,22 @@ sub _starting_points {
 sub _is_perl {
     my $file = shift;
 
+    # accept as a Perl file everything that ends with a well known Perl suffix ...
+    return 1 if $file =~ / [.](?:PL|p(?:[lm]|od)|t)$ /x;
+
     open my $fh, '<', $file or return;
     my $first = <$fh>;
     close $fh;
 
-    # accept as a Perl file everything that ends with a well known Perl suffix
-    # or that has a shee-bang as first line
-    # or that is a .bat ad has a Perl comment line first
-    return 1 if ($file =~ / \.PL$ | \.p(?:l|m|od)$ | \.t$ /x) 
-	|| ( defined $first && ($first =~ /^#!.*perl/) );
-    return 1 if defined $first && ($first =~ /--\*-Perl-\*--/) && ($file =~ / \.bat$ | \.BAT$ /x);
+
+    # ... or that has a shee-bang as first line ...
+    return 1 if defined $first
+	&& ($first =~ /^(?:#!.*perl)/);
+
+    # ... or that is a .bat ad has a Perl comment line first
+    return 1 if defined $first
+	&& ($first =~ /(?:--\*-Perl-\*--)/)
+	&& ($file =~ / [.](?:bat|BAT) /x);
 
     return;
 }
