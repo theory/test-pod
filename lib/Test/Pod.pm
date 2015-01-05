@@ -1,7 +1,6 @@
 package Test::Pod;
 
 use strict;
-use warnings;
 use Exporter 'import';
 our @EXPORT = qw( pod_file_ok all_pod_files all_pod_files_ok  );
 
@@ -231,12 +230,12 @@ sub _is_perl {
 
     # ... or that has a shee-bang as first line ...
     return 1 if defined $first
-	&& ($first =~ /^(?:#!.*perl)/);
+	&& $first =~ /^(?:#!.*perl)/;
 
     # ... or that is a .bat ad has a Perl comment line first
     return 1 if defined $first
-	&& ($first =~ /(?:--\*-Perl-\*--)/)
-	&& ($file =~ / [.](?:bat|BAT) /x);
+	&& $first =~ /(?:--\*-Perl-\*--)/
+	&& $file =~ / [.](?:bat|BAT) /x;
 
     return;
 }
