@@ -1,6 +1,8 @@
 package Test::Pod;
 
 use strict;
+use Exporter 'import';
+our @EXPORT = qw( pod_file_ok all_pod_files all_pod_files_ok  );
 
 =head1 NAME
 
@@ -81,18 +83,6 @@ our %ignore_dirs = (
 
 my $Test = Test::Builder->new;
 
-sub import {
-    my $self = shift;
-    my $caller = caller;
-
-    for my $func ( qw( pod_file_ok all_pod_files all_pod_files_ok ) ) {
-        no strict 'refs';
-        *{$caller."::".$func} = \&$func;
-    }
-
-    $Test->exported_to($caller);
-    $Test->plan(@_);
-}
 
 sub _additional_test_pod_specific_checks {
     my ($ok, $errata, $file) = @_;
@@ -216,7 +206,7 @@ sub all_pod_files {
     my @pod;
     require File::Find;
     File::Find::find({
-        wanted   => sub { -f $_ && _is_perl ($_) and push @pod, $File::Find::name },
+        wanted   => sub { -f $_ && _is_perl($_) && push @pod, $File::Find::name },
         no_chdir => 1,
     }, @_ ? @_ : _starting_points());
     return @pod;
@@ -230,15 +220,22 @@ sub _starting_points {
 sub _is_perl {
     my $file = shift;
 
-    return 1 if $file =~ /\.PL$/;
-    return 1 if $file =~ /\.p(?:l|m|od)$/;
-    return 1 if $file =~ /\.t$/;
+    # accept as a Perl file everything that ends with a well known Perl suffix ...
+    return 1 if $file =~ / [.](?:PL|p(?:[lm]|od)|t)$ /x;
 
     open my $fh, '<', $file or return;
     my $first = <$fh>;
     close $fh;
 
-    return 1 if defined $first && ($first =~ /(?:^#!.*perl)|--\*-Perl-\*--/);
+
+    # ... or that has a shee-bang as first line ...
+    return 1 if defined $first
+	&& $first =~ /^(?:#!.*perl)/;
+
+    # ... or that is a .bat ad has a Perl comment line first
+    return 1 if defined $first
+	&& $first =~ /(?:--\*-Perl-\*--)/
+	&& $file =~ / [.](?:bat|BAT) /x;
 
     return;
 }
