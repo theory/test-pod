@@ -156,8 +156,9 @@ so you can't have already called C<plan>.
 
 If C<@entries> is empty or not passed, the function finds all POD files in
 files in the F<blib> directory if it exists, or the F<lib> directory if not. A
-POD file is one that ends with F<.pod>, F<.pl> and F<.pm>, or any file where
-the first line looks like a shebang line.
+POD file is one that ends with a Perl extension (F<.pod>, F<.pl>, F<.pm>, F<.PL>, F<.t>),
+any file where the first line looks like a Perl-shebang or any batch file (F<.bat>)
+starting with a line containing C<--*-Perl-*-->.
 
 If you're testing a module, just make a F<t/pod.t>:
 
