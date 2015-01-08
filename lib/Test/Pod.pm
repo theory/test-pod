@@ -156,8 +156,9 @@ so you can't have already called C<plan>.
 
 If C<@entries> is empty or not passed, the function finds all POD files in
 files in the F<blib> directory if it exists, or the F<lib> directory if not. A
-POD file is one that ends with F<.pod>, F<.pl> and F<.pm>, or any file where
-the first line looks like a shebang line.
+POD file is one that ends with a Perl extension (F<.pod>, F<.pl>, F<.pm>, F<.PL>, F<.t>),
+any file where the first line looks like a Perl-shebang or any batch file (F<.bat>)
+starting with a line containing C<--*-Perl-*-->.
 
 If you're testing a module, just make a F<t/pod.t>:
 
@@ -216,7 +217,7 @@ sub all_pod_files {
     my @pod;
     require File::Find;
     File::Find::find({
-        wanted   => sub { -f $_ && _is_perl ($_) and push @pod, $File::Find::name },
+        wanted   => sub { -f $_ && _is_perl($_) && push @pod, $File::Find::name },
         no_chdir => 1,
     }, @_ ? @_ : _starting_points());
     return @pod;
@@ -230,15 +231,23 @@ sub _starting_points {
 sub _is_perl {
     my $file = shift;
 
-    return 1 if $file =~ /\.PL$/;
-    return 1 if $file =~ /\.p(?:l|m|od)$/;
-    return 1 if $file =~ /\.t$/;
+
+    # accept as a Perl file everything that ends with a well known Perl suffix ...
+    return 1 if $file =~ / [.](?:PL|p(?:[lm]|od)|t)$ /x;
 
     open my $fh, '<', $file or return;
     my $first = <$fh>;
     close $fh;
 
-    return 1 if defined $first && ($first =~ /(?:^#!.*perl)|--\*-Perl-\*--/);
+
+    # ... or that has a she-bang as first line ...
+    return 1 if defined $first
+	&& $first =~ /^(?:#!.*perl)/;
+
+    # ... or that is a .bat ad has a Perl comment line first
+    return 1 if defined $first
+	&& $first =~ /(?:--\*-Perl-\*--)/
+	&& $file =~ / [.](?:bat) /xi;
 
     return;
 }
