@@ -3,6 +3,10 @@ Change log for Test::Pod
 1.49
     * Changed license in the README to "Same as Perl" to match the license
       listed in `META.yml`, and in the POD as of v1.42.
+    * Tightened up the heuristic for matching Perl batch files to require
+      that the file end in `.bat`, as described in the documentation.
+      Patch from Luca Ferrari.
+    * Simplified some of the matching code. Patch from Luca Ferrari.
 
 1.48 - 2013-05-06T04:47:00Z
     * Fixed test failure with versions of Pod::Simple lower than 3.24. Thanks

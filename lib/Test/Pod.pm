@@ -156,9 +156,9 @@ so you can't have already called C<plan>.
 
 If C<@entries> is empty or not passed, the function finds all POD files in
 files in the F<blib> directory if it exists, or the F<lib> directory if not. A
-POD file is one that ends with a Perl extension (F<.pod>, F<.pl>, F<.pm>, F<.PL>, F<.t>),
-any file where the first line looks like a Perl-shebang or any batch file (F<.bat>)
-starting with a line containing C<--*-Perl-*-->.
+POD file is one that ends with a Perl extension (F<.pod>, F<.pl>, F<.pm>,
+F<.PL>, F<.t>), where the first line looks like a Perl shebang, or a batch
+file (F<.bat>) starting with a line containing C<--*-Perl-*-->.
 
 If you're testing a module, just make a F<t/pod.t>:
 
@@ -231,23 +231,19 @@ sub _starting_points {
 sub _is_perl {
     my $file = shift;
 
-
     # accept as a Perl file everything that ends with a well known Perl suffix ...
-    return 1 if $file =~ / [.](?:PL|p(?:[lm]|od)|t)$ /x;
+    return 1 if $file =~ /[.](?:PL|p(?:[lm]|od)|t)$/;
 
     open my $fh, '<', $file or return;
     my $first = <$fh>;
     close $fh;
-
+    return unless $first;
 
     # ... or that has a she-bang as first line ...
-    return 1 if defined $first
-	&& $first =~ /^(?:#!.*perl)/;
+    return 1 if $first =~ /^#!.*perl/;
 
     # ... or that is a .bat ad has a Perl comment line first
-    return 1 if defined $first
-	&& $first =~ /(?:--\*-Perl-\*--)/
-	&& $file =~ / [.](?:bat) /xi;
+    return 1 if $file =~ /[.]bat$/i && $first =~ /--[*]-Perl-[*]--/;
 
     return;
 }
@@ -274,8 +270,9 @@ Thanks to
 Andy Lester,
 David Wheeler,
 Paul Miller
+Peter Edwards,
 and
-Peter Edwards
+Luca Ferrari
 for contributions and to C<brian d foy> for the original code.
 
 =head1 COPYRIGHT AND LICENSE
