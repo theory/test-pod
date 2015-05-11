@@ -21,8 +21,8 @@ Module::Build->new(
     meta_merge => {
         resources => {
             homepage   => 'http://search.cpan.org/dist/Test-Pod/',
-            bugtracker => 'http://github.com/theory/test-pod/issues/',
-            repository => 'http://github.com/theory/test-pod',
+            bugtracker => 'http://github.com/perl-pod/test-pod/issues/',
+            repository => 'http://github.com/perl-pod/test-pod',
         }
     },
 )->create_build_script;

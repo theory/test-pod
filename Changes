@@ -7,6 +7,8 @@ Change log for Test::Pod
       that the file end in `.bat`, as described in the documentation.
       Patch from Luca Ferrari.
     * Simplified some of the matching code. Patch from Luca Ferrari.
+    * Transferred ownership of the repository to the perl-pod organization on
+      GitHub.
 
 1.48 - 2013-05-06T04:47:00Z
     * Fixed test failure with versions of Pod::Simple lower than 3.24. Thanks
