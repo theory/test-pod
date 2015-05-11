@@ -248,36 +248,56 @@ sub _is_perl {
     return;
 }
 
-=head1 TODO
+=head1 SUPPORT
 
-STUFF TO DO
+This module is managed in an open L<GitHub
+repository|http://github.com/perl-pod/test-pod/>. Feel free to fork and
+contribute, or to clone L<git://github.com/perl-pod/test-pod.git> and send
+patches!
 
-Note the changes that are being made.
+Found a bug? Please L<post|http://github.com/perl-pod/test-pod/issues> or
+L<email|mailto:bug-test-pod@rt.cpan.org> a report!
 
-Note that you no longer can test for "no pod".
+=head1 AUTHORS
 
-=head1 AUTHOR
+=over
 
-Currently maintained by David E. Wheeler, C<< <david@justatheory.com> >>.
+=item David E. Wheeler <david@justatheory.com>
 
-Originally by brian d foy.
+Current maintainer.
 
-Maintainer emeritus: Andy Lester, C<< <andy at petdance.com> >>.
+=item Andy Lester C<< <andy at petdance.com> >>
+
+Maintainer emeritus.
+
+=item brian d foy
+
+Orinal author.
+
+=back
 
 =head1 ACKNOWLEDGEMENTS
 
-Thanks to
-Andy Lester,
-David Wheeler,
-Paul Miller
-Peter Edwards,
-and
-Luca Ferrari
-for contributions and to C<brian d foy> for the original code.
+Thanks brian d foy for the original code, and to these folks for contributions:
+
+=over
+
+=item * Andy Lester
+
+=item * David E. Wheeler
+
+=item * Paul Miller
+
+=item * Peter Edwards
+
+=item * Luca Ferrari
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2006-2010, Andy Lester. Some Rights Reserved.
+Copyright 2006-2010, Andy Lester; 2010-2015 David E. Wheeler. Some Rights
+Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

@@ -5,6 +5,7 @@ use Module::Build '0.30';
 Module::Build->new(
     module_name        => 'Test::Pod',
     license            => 'perl',
+    dist_author => 'David E. Wheeler <david@justatheory.com>',
     configure_requires => { 'Module::Build' => '0.30', },
     create_makefile_pl => 'traditional',
     build_requires     => {
