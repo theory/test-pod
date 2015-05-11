@@ -31,6 +31,6 @@
 # Avoid build files.
 ^Test-Pod
 
-# Avoid spelling test.
-pod-spelling.t$
+# Avoid Pod tests.
+t/pod[^/.]*\.t
 ^MYMETA\.json$
