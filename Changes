@@ -1,6 +1,6 @@
 Change log for Test::Pod
 
-1.49
+1.49  2015-05-12T17:30:58Z
     * Changed license in the README to "Same as Perl" to match the license
       listed in `META.yml`, and in the POD as of v1.42.
     * Tightened up the heuristic for matching Perl batch files to require
