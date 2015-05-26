@@ -1,0 +1,18 @@
+=head1 NAME
+
+Test::Pod test pod -- an ignore pod file
+
+=head1 DESCRIPTION
+
+This is a pod file in a directory listed in C<%ingore_dirs>, and so
+should be ignored.
+
+=head1 AUTHOR
+
+David Wheeler <garbage-address@aol.com>
+
+=head1 COPYRIGHT
+
+Copyright 2015, David Wheeler
+
+=cut
