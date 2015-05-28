@@ -4,7 +4,7 @@ Test::Pod test pod -- an ignore pod file
 
 =head1 DESCRIPTION
 
-This is a pod file in a directory listed in C<%ingore_dirs>, and so
+This is a pod file in a directory listed in C<%ignore_dirs>, and so
 should be ignored.
 
 =head1 AUTHOR
