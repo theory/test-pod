@@ -1,6 +1,6 @@
 Change log for Test::Pod
 
-1.50
+1.50  2015-05-28T21:42:48Z
     * Restored support for ignoring directories listed in
       `%Test::Pod::ignore_dirs`, inadvertently dropped by the switch to
       File::Find in v1.46. Thanks to Julien ÉLIE for the report and diagnosis!
