@@ -28,6 +28,17 @@ my %WriteMakefileArgs = (
                 web => 'http://github.com/perl-pod/test-pod/issues/',
             },
         },
+        x_MailingList => 'http://lists.perl.org/list/pod-people-qa.html',
+        x_IRC => 'irc://irc.perl.org/#perl-qa', # maybe we should make a pod channel?
+        x_contributors => [ # manually added, from git shortlog -e -s -n
+            'David E. Wheeler <david@justatheory.com>',
+            'Andy Lester <andy@petdance.com>',
+            'Paul Miller <jettero@cpan.org>',
+            'Luca Ferrari <fluca1978@gmail.com>',
+            'Karen Etheridge <ether@cpan.org>',
+            'ChrisWi <chris@computersalat.de>',
+            'David Steinbrunner <dsteinbrunner@pobox.com>',
+        ],
     },
 
     META_ADD => {
