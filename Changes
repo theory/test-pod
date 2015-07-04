@@ -1,6 +1,6 @@
 Change log for Test::Pod
 
-1.51
+1.51  2015-07-04 20:36:53Z
     * convert tooling from Module::Build to ExtUtils::MakeMaker (resolves
       circular dependency with MB on perl 5.21+)
 
