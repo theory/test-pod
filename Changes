@@ -1,6 +1,8 @@
 Change log for Test::Pod
 
 1.51
+    * convert tooling from Module::Build to ExtUtils::MakeMaker (resolves
+      circular dependency with MB on perl 5.21+)
 
 1.50  2015-05-28T21:42:48Z
     * Restored support for ignoring directories listed in
