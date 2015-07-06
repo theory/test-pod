@@ -4,7 +4,11 @@ require 5.008;
 use ExtUtils::MakeMaker;
 
 my $developer = -f '.gitignore';
-ExtUtils::MakeMaker->VERSION(6.98) if $developer;
+if ($developer) {
+    ExtUtils::MakeMaker->VERSION('6.98');
+    require ExtUtils::Manifest;
+    ExtUtils::Manifest->VERSION('1.70');
+}
 
 my %WriteMakefileArgs = (
     NAME                => 'Test::Pod',
