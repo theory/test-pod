@@ -277,7 +277,7 @@ Maintainer emeritus.
 
 =item brian d foy
 
-Orinal author.
+Original author.
 
 =back
 
