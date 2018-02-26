@@ -191,12 +191,12 @@ sub all_pod_files_ok {
 =head2 all_pod_files( [@dirs] )
 X<all_pod_files>
 
-Returns a list of all the Perl files in I<@dirs> and in directories below. If
+Returns a list of all the POD files in I<@dirs> and in directories below. If
 no directories are passed, it defaults to F<blib> if F<blib> exists, or else
 F<lib> if not. Skips any files in F<CVS>, F<.svn>, F<.git> and similar
 directories. See C<%Test::Pod::ignore_dirs> for a list of them.
 
-A Perl file is:
+A POD file is:
 
 =over 4
 
