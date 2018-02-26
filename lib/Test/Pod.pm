@@ -158,8 +158,8 @@ so you can't have already called C<plan>.
 If C<@entries> is empty or not passed, the function finds all POD files in
 files in the F<blib> directory if it exists, or the F<lib> directory if not. A
 POD file is one that ends with a Perl extension (F<.pod>, F<.pl>, F<.pm>,
-F<.PL>, F<.t>), where the first line looks like a Perl shebang, or a batch
-file (F<.bat>) starting with a line containing C<--*-Perl-*-->.
+F<.PL>, F<.psgi>, F<.t>), where the first line looks like a Perl shebang, or a
+batch file (F<.bat>) starting with a line containing C<--*-Perl-*-->.
 
 If you're testing a module, just make a F<t/pod.t>:
 
@@ -201,7 +201,7 @@ A Perl file is:
 
 =over 4
 
-=item * Any file that ends in F<.PL>, F<.pl>, F<.PL>, F<.pm>, F<.pod>, or F<.t>.
+=item * Any file that ends in F<.PL>, F<.pl>, F<.PL>, F<.pm>, F<.pod>, F<.psgi> or F<.t>.
 
 =item * Any file that has a first line with a shebang and "perl" on it.
 
@@ -237,7 +237,7 @@ sub _is_perl {
     my $file = shift;
 
     # accept as a Perl file everything that ends with a well known Perl suffix ...
-    return 1 if $file =~ /[.](?:PL|p(?:[lm]|od)|t)$/;
+    return 1 if $file =~ /[.](?:PL|p(?:[lm]|od|sgi)|t)$/;
 
     open my $fh, '<', $file or return;
     my $first = <$fh>;
