@@ -62,8 +62,6 @@ C<Pod::Simple> to do the heavy lifting.
 
 =cut
 
-use 5.008;
-
 use Test::Builder;
 use Pod::Simple;
 
