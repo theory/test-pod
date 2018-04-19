@@ -1,5 +1,8 @@
 Change log for Test::Pod
 
+    * *.psgi files are now recognized as pod-containing files (thanks, Tom
+      Hukins!)
+
 1.51  2015-07-04 20:36:53Z
     * convert tooling from Module::Build to ExtUtils::MakeMaker (resolves
       circular dependency with MB on perl 5.21+)
