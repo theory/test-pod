@@ -5,7 +5,7 @@ use warnings;
 
 =head1 NAME
 
-Test::Pod - check for POD errors in files
+Test::Pod - Check for POD errors in files
 
 =head1 VERSION
 
