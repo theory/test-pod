@@ -149,7 +149,7 @@ sub pod_file_ok {
 =head2 all_pod_files_ok( [@entries] )
 
 Checks all the files under C<@entries> for valid POD. It runs
-L<all_pod_files()> on directories and assumes everything else to be a file to
+L</all_pod_files> on directories and assumes everything else to be a file to
 be tested. It calls the C<plan()> function for you (one test for each file),
 so you can't have already called C<plan>.
 
